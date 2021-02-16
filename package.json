@@ -2,7 +2,7 @@
   "name": "mit-license-adder",
   "displayName": "MIT License Adder",
   "description": "MIT License Adder adds an MIT LICENSE.MD file into the current open VSC workspace.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "publisher": "petems",
   "repository": "https://github.com/petems/mit-license-adder.git",
   "icon": "assets/mit-logo.png",
