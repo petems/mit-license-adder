@@ -60,7 +60,7 @@
     "@types/glob": "^7.1.3",
     "@types/mocha": "^8.2.1",
     "@typescript-eslint/eslint-plugin": "^4.11.1",
-    "@typescript-eslint/parser": "^4.15.2",
+    "@typescript-eslint/parser": "^4.22.0",
     "chai-files": "^1.4.0",
     "eslint": "^7.21.0",
     "glob": "^7.1.6",
