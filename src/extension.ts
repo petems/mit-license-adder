@@ -2,6 +2,7 @@
 
 import * as vscode from 'vscode';
 import * as fs from 'fs';
+import path = require('path');
 
 const mitLicense = `The MIT License (MIT)
 
@@ -36,13 +37,21 @@ function writeToFile(path:string, data:string) {
 }
 
 function addRootLicense (owner:string) {
-	
+  
 	const { workspaceFolders } = vscode.workspace;
-  if (!workspaceFolders || workspaceFolders?.length === 0) {
-		vscode.window.showErrorMessage("You need to open a workspace (folder)");
-		throw new Error("No workspace found");
+	  if (!workspaceFolders || workspaceFolders?.length === 0) {
+	  vscode.window.showErrorMessage("You need to open a workspace (folder)");
+	  throw new Error("No workspace found");
 	}
-	var licensePath = workspaceFolders[0].uri.path + '/LICENSE.md';
+	
+	var currentPathDirectory = vscode.workspace.workspaceFolders![0];
+  
+	if (currentPathDirectory.uri.fsPath === '') {
+	  vscode.window.showErrorMessage("Could not find Workspace path");
+	  throw new Error("No workspace path found");
+	}
+  
+	var licensePath = path.join(currentPathDirectory.uri.fsPath, '/LICENSE.md');
 	var licenseString = mitLicense.replace('<OWNER>', owner).replace('<YEAR>', new Date().getFullYear().toString());
 	writeToFile(licensePath, licenseString);
 }
