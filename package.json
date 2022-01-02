@@ -68,7 +68,7 @@
     "vscode-test": "^1.6.1"
   },
   "dependencies": {
-    "@types/fs-extra": "^9.0.11",
+    "@types/fs-extra": "^9.0.13",
     "@types/node": "16.10.2",
     "@types/vscode": "^1.60.0",
     "chai": "^4.3.4",
